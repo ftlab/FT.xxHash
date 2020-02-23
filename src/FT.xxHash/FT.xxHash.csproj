@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard1.6;netstandard2.0;net35;net451;net462</TargetFrameworks>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>FT.xxHash</PackageId>
+        <Version>1.0.0</Version>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>xxHash is an extremely fast non-cryptographic hash algorithm, working at speeds close to RAM limits. It is proposed in two flavors, 32 and 64 bits.</Description>
+        <PackageTags>xxHash, Hash</PackageTags>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+        <RepositoryUrl>https://github.com/ftlab/FT.xxHash</RepositoryUrl>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' != 'net35'">
+      <PackageReference Include="System.Memory">
+        <Version>4.5.3</Version>
+      </PackageReference>
+    </ItemGroup>
+
+</Project>
